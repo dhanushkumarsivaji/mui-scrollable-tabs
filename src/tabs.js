@@ -27,10 +27,16 @@ export default function MuiTabs({ hideEditButton = false, tabsData }) {
 
   const TabsContainer = styled(Tabs)(({ theme }) => ({
     "&.tab-container": {
-      // background: 'red',
+      
+
+      ".MuiTabs-flexContainer": {
+        borderBottom: `2px solid  ${theme.palette.primary.main}`,
+        width: '100%',
+        minWidth: 'max-content'
+      },
 
       ".MuiTabs-scroller": {
-        borderBottom: `2px solid  ${theme.palette.primary.main}`,
+        // borderBottom: `2px solid  ${theme.palette.primary.main}`,
       },
 
       ".MuiTabs-indicator": {
@@ -79,6 +85,8 @@ export default function MuiTabs({ hideEditButton = false, tabsData }) {
 
       borderBottom: "none",
 
+      boxShadow: '0 4px 0 -2px white'
+
       // '& span': {
 
       //   color: theme.palette.primary.main
@@ -94,7 +102,7 @@ export default function MuiTabs({ hideEditButton = false, tabsData }) {
   };
 
   return (
-    <div style={{marginTop: '60px'}}>
+    <div style={{ marginTop: "60px" }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={8} lg={8} sm={12}>
           <Box sx={{ width: "100%" }}>
@@ -107,11 +115,12 @@ export default function MuiTabs({ hideEditButton = false, tabsData }) {
               variant="scrollable"
               scrollButtons
             >
-              {tabsData.map((v, i) => (
-                <TabButton label={v} />
-              ))}
+              
+                {tabsData.map((v, i) => (
+                  <TabButton label={v} />
+                ))}
 
-              <TabButton label="+" />
+                <TabButton label="+" />
             </TabsContainer>
           </Box>
         </Grid>
